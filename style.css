@@ -85,6 +85,7 @@ nav a:hover::after {
   flex-wrap: wrap;
 }
 
+/* ===== HERO PHOTO (FIXED) ===== */
 .hero-photo {
   width: 260px;
   height: 260px;
@@ -92,15 +93,18 @@ nav a:hover::after {
   overflow: hidden;
   border: 5px solid var(--accent);
   box-shadow: 0 0 25px var(--glow);
+  flex-shrink: 0;
 }
 
 .hero-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: 50% 12%;
 }
 
+
+/* ===== HERO CONTENT ===== */
 .hero-content h1 {
   font-size: 42px;
   color: var(--accent);
@@ -175,63 +179,18 @@ nav a:hover::after {
   margin-bottom: 20px;
 }
 
-/* ===== PROJECTS ===== */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-}
-
-.project-card {
-  background: var(--card);
-  padding: 22px;
-  border-radius: 15px;
-  border: 1px solid #333;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card h3 {
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-
-.project-card ul {
-  padding-left: 20px;
-  color: var(--muted);
-}
-
-.project-card li {
-  margin-bottom: 6px;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px var(--glow);
-}
-
-/* ===== ABOUT / COMMON CARDS ===== */
-.about-card,
-.card {
-  background: var(--card);
-  padding: 20px;
-  border-radius: 15px;
-  border: 1px solid #333;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.about-card:hover,
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px var(--glow);
-}
-
-/* ===== CERTIFICATIONS (UPDATED) ===== */
+/* ===== GRIDS ===== */
+.projects-grid,
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
 }
 
+/* ===== CARDS ===== */
+.project-card,
+.about-card,
+.card,
 .cert-card {
   background: var(--card);
   padding: 22px;
@@ -240,18 +199,22 @@ nav a:hover::after {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cert-card h3 {
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-
-.cert-card p {
-  color: var(--muted);
-}
-
+.project-card:hover,
+.about-card:hover,
+.card:hover,
 .cert-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 30px var(--glow);
+}
+
+.project-card h3,
+.cert-card h3 {
+  color: var(--accent);
+}
+
+.project-card ul {
+  padding-left: 20px;
+  color: var(--muted);
 }
 
 /* ===== CONTACT FORM ===== */
@@ -296,9 +259,28 @@ nav a:hover::after {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .hero-container {
+    flex-direction: column;
     text-align: center;
-    justify-content: center;
+  }
+
+  .hero-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  #role {
+    font-size: 22px;
   }
 
   .projects-grid,
