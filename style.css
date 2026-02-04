@@ -140,7 +140,12 @@ nav a:hover::after {
 
 /* ===== BUTTONS ===== */
 .buttons {
-  margin-top: 20px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;
+  gap: 15px;                 /* space between buttons */
+  flex-wrap: wrap;           /* mobile safe */
 }
 
 .btn {
@@ -148,10 +153,8 @@ nav a:hover::after {
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  margin-right: 10px;
   transition: 0.3s;
 }
-
 .btn:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 20px var(--glow);
@@ -285,6 +288,48 @@ nav a:hover::after {
 
   .projects-grid,
   .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== CONTACT DETAILS ===== */
+.contact-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.contact-item {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+
+.contact-item span {
+  font-size: 28px;
+}
+
+.contact-item h4 {
+  margin-bottom: 4px;
+  color: var(--accent);
+}
+
+.contact-item p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.contact-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px var(--glow);
+}
+@media (max-width: 768px) {
+  .contact-box {
     grid-template-columns: 1fr;
   }
 }
