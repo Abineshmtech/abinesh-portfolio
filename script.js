@@ -1,26 +1,23 @@
 const roles = [
   "Software Developer",
   "Full Stack Developer",
-  "Front End Developer",
-  "Back End Developer",
+  "Frontend Developer",
+  "Backend Developer",
   "Web Developer"
 ];
+
+const colors = ["#f5c400", "#38bdf8", "#22c55e", "#ef4444"];
 
 let index = 0;
 const role = document.getElementById("role");
 
 setInterval(() => {
-  role.style.animation = "none";
-  role.offsetHeight;
   index = (index + 1) % roles.length;
-  role.textContent = roles[index];
-  role.style.animation =
-    "rotateText 2s ease-in-out, colorShift 6s infinite";
-}, 2200);
+  role.style.opacity = "0";
 
-document.querySelector(".contact-form").addEventListener("submit", e => {
-  e.preventDefault();
-  alert("Thank you! Your message has been sent.");
-  e.target.reset();
-}
-);
+  setTimeout(() => {
+    role.textContent = roles[index];
+    role.style.color = colors[index];
+    role.style.opacity = "1";
+  }, 300);
+}, 2000);
