@@ -333,7 +333,11 @@ nav a:hover::after {
   }
 }
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 160px;   /* 🔥 NAVBAR CUT FIX */
+  }
+
   .hero-photo {
-    margin: 0 auto;   /* FIX */
+    margin: 0 auto;
   }
 }
