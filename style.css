@@ -10,12 +10,13 @@ body {
   color: #fff;
 }
 
-/* NAVBAR */
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
-  width: 100%;
   top: 0;
-  background: #151515;
+  width: 100%;
+  background: #0f0f0f;
+  border-bottom: 1px solid #222;
   z-index: 1000;
 }
 
@@ -24,24 +25,69 @@ body {
   margin: auto;
   padding: 15px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
+/* LOGO */
 .logo {
+  font-size: 18px;
+  font-weight: 600;
   color: #f5c400;
-  font-weight: bold;
-  font-size: 20px;
+  letter-spacing: 0.5px;
 }
 
-nav a {
-  color: #fff;
-  margin-left: 20px;
+/* NAV LINKS */
+.navbar nav {
+  display: flex;
+  gap: 28px;
+}
+
+.navbar nav a {
   text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  position: relative;
+  transition: 0.3s;
 }
 
-nav a:hover {
+/* HOVER EFFECT */
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #f5c400;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
   color: #f5c400;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== MOBILE NAV FIX ===== */
+@media (max-width: 768px) {
+
+  .nav-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navbar nav {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar nav a {
+    font-size: 13px;
+  }
 }
 
 /* HERO */
